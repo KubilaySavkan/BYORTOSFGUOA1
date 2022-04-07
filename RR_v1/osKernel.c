@@ -1,6 +1,7 @@
 #include "osKernel.h"
 
 #define SYSPRI3						(*((volatile uint32_t *)0xE000ED20))		// !TODO: find another way to access
+#define INTCTRL						(*((volatile uint32_t *)0xE000ED04))		// !TODO: find another way to access
 	
 void osSchedulerLaunch(void);
 
@@ -70,5 +71,10 @@ void osKernelLaunch(uint32_t quanta)
 	SysTick->CTRL = 0x00000007;
 	
 	osSchedulerLaunch();
+}
+
+void osThreadYield(void)
+{
+	INTCTRL = 0x04000000;			// trigger SysTick
 }
 

@@ -11,6 +11,7 @@ void Task0(void)
 	while(1)
 	{
 		ui32TaskCnt0++;
+		osThreadYield();
 	}
 }
 
@@ -19,6 +20,7 @@ void Task1(void)
 	while(1)
 	{
 		ui32TaskCnt1++;
+		osThreadYield();
 	}
 }
 
@@ -27,6 +29,7 @@ void Task2(void)
 	while(1)
 	{
 		ui32TaskCnt2++;
+		//osThreadYield();
 	}
 }
 

@@ -11,5 +11,7 @@ void osKernelInit(void);
 
 void osKernelLaunch(uint32_t quanta);
 
+void osThreadYield(void);
+
 #endif//_OSKERNEL_H
 
